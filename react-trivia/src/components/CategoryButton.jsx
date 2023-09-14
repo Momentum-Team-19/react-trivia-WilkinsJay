@@ -15,19 +15,19 @@ const CategoryButton = ({ setCategoryId }) => {
             })
     }, [])
 
-    const handleClick = (categories) => {
-        console.log(`You Clicked on ${name}, id ${categoryId}!`)
-        setCategoryId({ categories.id })
+    const handleClick = (category) => {
+        console.log(`You Clicked on ${category.name}, id ${category.id}!`)
+        setCategoryId(category.id);
     }
 
     return (
         categories.map((category) => (
             <button
-                key={categoryId}
-                onClick={handleClick}
+                key={category.id}
+                onClick={() => handleClick(category)}
             >
                 <h2 className="text-lg font-semibold">
-                    {name}
+                    {category.name}
                 </h2>
             </button>
         )))

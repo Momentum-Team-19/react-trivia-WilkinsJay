@@ -15,7 +15,7 @@ function App() {
             {(!categoryId) ?
 
                 <CategoryButton
-                    categoryId={categoryId}
+                    setCategoryId={setCategoryId}
                 />
                 :
                 <CategoryQuestions

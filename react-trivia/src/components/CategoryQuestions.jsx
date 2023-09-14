@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export const CategoryQuestions = ({ categoryId, setCategoryId }) => {
+    const [questions, setQuestions] = useState([])
 
     useEffect(() => {
         // where we're calling the API to recieve information; axios call
-        const [questions, setQuestions] = useState([])
         axios
             .get(`https://opentdb.com/api.php?amount=10&category=${categoryId}`)
             .then((response) => {
